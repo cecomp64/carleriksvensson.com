@@ -1,9 +1,12 @@
 $header_color: #303030;
-$content_bg: #f8f8f8;
+$content_bg: #dfdfdf;
 $heading_text: #90be3a;
 $link_color: #368eb1;
 $link_hover: #78bad6;
 $header_accent: #78bad6;
+$orange: #ce7c3f;
+$red: #ce463f;
+$blue: #368eb1;
 
 a {
   text-decoration: none;
@@ -65,6 +68,11 @@ div#header {
 
 div#body {
   height: 500px;
+  background: $content_bg;
+  margin:0;
+  padding:0;
+  float: left;
+  width: 100%;
 }
 
 div#footer {
@@ -73,6 +81,7 @@ div#footer {
   width: 100%;
   margin: 0px;
   padding: 0px;
+  float: left;
 
   p {
     color: $header_accent;
@@ -82,11 +91,43 @@ div#footer {
     position: relative;
   }
 
-  ul {
+  ul.social_buttons {
     position: relative;
     top: 10px;
+    width: 225px;
   }
 
+}
+
+div#center-flow {
+  width: 1100px;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div#portrait {
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background-image: url("portrait.jpg");
+  display: inline;
+  float: left;
+  position: relative;
+  top: 30px;
+}
+
+div#info {
+  width: 600px;
+  display: inline;
+  float: left;
+  position: relative;
+  left: 50px;
+  top: 30px;
+
+  h1 {
+    color: $header_color;
+  }
 }
 
 ul.social_buttons {
@@ -108,3 +149,62 @@ ul.social_buttons {
   margin-right: auto;
   display: block;
 }
+
+.circle {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  display: inline;
+  float: left;
+  margin-right: 30px;
+
+  h2 {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    top: 60px;
+    text-align: center;
+  }
+}
+
+.orange {
+  background: $orange;
+  color: white;
+}
+
+.red {
+  background: $red;
+  color: white;
+}
+
+.blue {
+  background: $blue;
+  color: white;
+}
+
+.intro_text {
+  width: 100%;
+  clear: both;
+  position: relative;
+  top: 20px;
+}
+
+ul.footer_nav {
+
+  list-style: none;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  width: 400px;
+  color: $header_accent;
+  position: relative;
+  top: 10px;
+
+  li {
+    display: inline;
+    margin: 0;
+    padding: 0;
+    clear: none;
+  }
+}
+
