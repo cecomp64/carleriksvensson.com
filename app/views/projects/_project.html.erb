@@ -1,0 +1,27 @@
+<div class="project">
+
+  <% if @project.url %>
+    <h2><%= link_to @project.title, @project.url %></h2>
+  <% else %>
+    <h2><%= @project.title %></h2>
+  <% end %>
+
+  <% if @project.picture %>
+    <%= image_tag @project.picture, :width => "200", :height => "200" %>
+  <% else %>
+    <%= image_tag "default_project.png", :width => "200", :height => "200" %>
+  <% end %>
+
+  <p class="description">
+    <%= @project.description %>
+  </p>
+
+  <p>
+    <% @project.tags.each do |tag| %>
+      <%= tag.value %> | 
+    <% end %>
+
+    <%= link_to 'Edit', edit_project_path(@project) %>
+  </p>
+
+</div>

@@ -1,66 +1,38 @@
-
-<div id="header">
-
-  <div id="title">
-    <h1>Carl Svensson</h1>
-    <h2>Engineer Creative Hobbyist</h2>
+<div id="center-flow">
+  <div id="portrait">
   </div>
+  <div id="info">
+    <h1>&nbsp;</h1>
 
-  <ul class="social_buttons">
-    <li><%=link_to image_tag("facebook.png", :border => 0, :width => "36px", :alt => "Facebook"), "https://www.facebook.com/carleriksvensson", :target => "_blank" %></li>
-    <li><%=link_to image_tag("googleplus.png", :border => 0, :width => "36px", :alt => "GooglePlus"), "https://plus.google.com/+CarlErikSvensson", :target => "_blank" %></li>
-    <li><%=link_to image_tag("linkedin.png", :border => 0, :width => "36px", :alt => "LinkedIn"), "www.linkedin.com/in/carleriksvensson/", :target => "_blank" %> </li>
-    <li><%=link_to image_tag("github_white.png", :border => 0, :width => "36px", :alt => "GitHub"), "https://github.com/cecomp64", :target => "_blank" %></li>
-  </ul>
-
-</div>
-
-<div id="body">
-  <div id="center-flow">
-    <div id="portrait">
-    </div>
-    <div id="info">
-      <h1>The Basics</h1>
-      <div class="circle orange">
+    <div class="outer-circle light-orange">
+      <div class="inner-circle orange">
         <h2>Resume</h2>
       </div>
-      <div class="circle red">
+    </div>
+
+    <%= link_to project_type_url("code") do %>
+    <div class="outer-circle light-red">
+      <div class="inner-circle red">
         <h2>Code</h2>
       </div>
-      <div class="circle blue">
+    </div>
+    <% end %>
+
+    <%= link_to project_type_url("design") do %>
+    <div class="outer-circle light-blue">
+      <div class="inner-circle blue">
         <h2>Design</h2>
       </div>
-
-      <p class="intro_text">
-       Welcome to my corner of the Internet.  I've put this site together to archive my projects, thoughts,
-       and just give a general sense of what I am up to.  You'll find some of the essentials highlighted above,
-       as well as some of my hobbies - music, photography, and maybe some written word, too.  Feel free to connect
-       with me via your social media of choice if you want to, say, discuss any interesting projects.
-      </p>
     </div>
+    <% end %>
+
+    <p class="intro_text">
+     Welcome to my corner of the Internet.  I've put this site together to archive my projects, thoughts,
+     and just give a general sense of what I am up to.  You'll find some of the essentials highlighted above,
+     as well as some of my hobbies - music, photography, and maybe some written word, too.  Feel free to connect
+     with me via your social media of choice if you want to, say, discuss any interesting projects, or just say, 'hi.'
+    </p>
   </div>
 </div>
-<div id="footer-menu">
-  <ul class="footer_nav">
-    <li>Resume | </li>
-    <li>Code | </li>
-    <li>Design | </li>
-    <li>Photography | </li>
-    <li>Music | </li>
-    <li>About</li>
-  </ul>
-</div>
-<div id="footer">
 
-  <ul class="social_buttons center">
-    <li><%=link_to image_tag("facebook.png", :border => 0, :width => "36px", :alt => "Facebook"), "https://www.facebook.com/carleriksvensson", :target => "_blank" %></li>
-    <li><%=link_to image_tag("googleplus.png", :border => 0, :width => "36px", :alt => "GooglePlus"), "https://plus.google.com/+CarlErikSvensson", :target => "_blank" %></li>
-    <li><%=link_to image_tag("linkedin.png", :border => 0, :width => "36px", :alt => "LinkedIn"), "www.linkedin.com/in/carleriksvensson/", :target => "_blank" %> </li>
-    <li><%=link_to image_tag("twitter.png", :border => 0, :width => "36px", :alt => "Twitter"), "https://twitter.com/cecomp64", :target => "_blank" %></li>
-    <li><%=link_to image_tag("github_white.png", :border => 0, :width => "36px", :alt => "GitHub"), "https://github.com/cecomp64", :target => "_blank" %></li>
-  </ul>
-  <p>
-  Some generic footer information.
-  Stay in touch via social media.
-  </p>
-</div>
+

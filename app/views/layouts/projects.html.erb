@@ -1,0 +1,18 @@
+<%= render "layouts/header" %>
+
+<div id="body">
+  <div id="project_page">
+    <h1>
+      Projects
+      <% if @tags %>
+        -
+        <% @tags.each do |tag| %>
+          tag
+        <% end %>
+      <% end %>
+    </h1>
+    <%= yield %>
+  </div>
+</div>
+
+<%= render "layouts/footer" %>

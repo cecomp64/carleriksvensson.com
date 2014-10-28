@@ -1,7 +1,7 @@
 $header_color: #303030;
 $content_bg: #dfdfdf;
 $heading_text: #90be3a;
-$link_color: #368eb1;
+$link_color: #303030;
 $link_hover: #78bad6;
 $header_accent: #78bad6;
 $orange: #ce7c3f;
@@ -14,14 +14,21 @@ a {
   color: $link_color;
 }
 
+a:visited {
+  text-decoration: none;
+  color: $link_color;
+}
+
 a:hover {
   color: $link_hover;
+  background: none;
 }
 
 body {
   margin:0;
   padding:0;
   position: relative;
+  background: $header_color;
 }
 
 
@@ -31,6 +38,10 @@ div#header {
   width: 100%;
   margin: 0px;
   padding: 0px;
+
+  a {
+    text-decoration: none;
+  }
 
   ul.social_buttons {
     float: left;
@@ -50,10 +61,12 @@ div#header {
     font-variant: small-caps;
 
     h1 {
-      display: inline;
+      display: block;
       font-size: 4em;
       margin: 0px;
       padding: 0px;
+      position: relative;
+      top: 25px;
     }
     h2 {
       display: block;
@@ -62,18 +75,20 @@ div#header {
       padding: 0px;
       color: $header_accent;
       left: 5px;
+      top: 45px;
       position: relative;
     }
   }
 }
 
 div#body {
-  height: 500px;
+  min-height: 500px;
   background: $content_bg;
   margin:0;
   padding:0;
   float: left;
   width: 100%;
+  min-width: 110px;
 }
 
 div#footer {
@@ -90,6 +105,7 @@ div#footer {
     text-align: center;
     top: 10px;
     position: relative;
+    font-size: 12px;
   }
 
   ul.social_buttons {
@@ -112,6 +128,7 @@ div#footer-menu {
 }
 
 div#center-flow {
+  background: $content_bg;
   width: 1100px;
   height: 100%;
   margin-left: auto;
@@ -130,7 +147,7 @@ div#portrait {
 }
 
 div#info {
-  width: 600px;
+  width: 650px;
   display: inline;
   float: left;
   position: relative;
@@ -162,6 +179,38 @@ ul.social_buttons {
   display: block;
 }
 
+.outer-circle {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  display: inline;
+  float: left;
+  margin-right: 5px;
+
+  .inner-circle{
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 25px;
+
+    h2 {
+      margin: 0;
+      padding: 0;
+      position: relative;
+      top: 60px;
+      text-align: center;
+    }
+  }
+}
+
+.outer-circle:hover {
+  background: $header_color;
+}
+
 .circle {
   border-radius: 50%;
   width: 150px;
@@ -184,6 +233,14 @@ ul.social_buttons {
   color: white;
 }
 
+.light-orange {
+  background: #e3b390;
+}
+
+.light-red {
+  background: #e39490;
+}
+
 .red {
   background: $red;
   color: white;
@@ -192,6 +249,10 @@ ul.social_buttons {
 .blue {
   background: $blue;
   color: white;
+}
+
+.light-blue {
+  background: #78bad6;
 }
 
 .intro_text {
@@ -207,7 +268,7 @@ ul.footer_nav {
   margin-left: auto;
   margin-right: auto;
   padding: 0;
-  width: 500px;
+  width: 650px;
   position: relative;
   top: 10px;
   font-size: 20px;
@@ -221,3 +282,37 @@ ul.footer_nav {
   }
 }
 
+
+// Projects
+div#project_page {
+  padding-left: 20px;
+
+  p.proj_edit {
+    clear: both;
+    display: block;
+  }
+}
+
+div.project {
+  background: $blue;
+  overflow: auto;
+  margin-bottom: 30px;
+  margin-right: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: white;
+  width: 40%;
+  float: left;
+
+  img {
+    display: inline;
+    float: left;
+    margin-right: 20px;
+  }
+
+  p.description {
+    display: inline;
+    clear: none;
+  }
+}

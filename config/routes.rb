@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
-  get 'static_pages/home'
+  resources :tags
 
-  get 'static_pages/about'
+  get 'projects/group/:tags' => 'projects#types', as: :project_type, :tags => /[A-Za-z,]+/
+  resources :projects
 
-  get 'static_pages/contact'
-
-  get 'static_pages/resume'
+  # Static pages
+  get 'about' => 'static_pages#about', as: :about
+  get 'contact' => 'static_pages#contact', as: :contact
+  get 'resume' => 'static_pages#resume', as: :resume
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

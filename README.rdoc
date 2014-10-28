@@ -3,7 +3,29 @@
 This is an app for my personal website.
 
 == Design Notes
-* Portrait on right side of header, fade into bg color
+* Portrait (or abstract picture) on right side of header, fade into bg color
+* Blog with button to e-mail approval link
+** Approval goes out to editor
+** Editor clicks a link to read, or a link to approve
+** Post goes public
+* Interactive resume
+** Taggable, sortable
+
+* Projects controller
+** Code - ongoing coding projects
+*** Wosaic
+*** Open sport db stuff
+*** MLS app
+
+** Design - web design projects
+*** LIVE URL
+
+** Other
+*** Pictures
+
+== Project
+
+rails g scaffold Project type:string url:string picture:string description:string title:string
 
 == Props
 

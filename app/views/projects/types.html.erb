@@ -1,0 +1,10 @@
+
+<% @projects.each do |project| %>
+  <% @project = project %>
+  <%= render 'project' %>
+<% end %>
+
+<p class="proj_edit">
+  <%= link_to 'All Projects', projects_path %>
+</p>
+
