@@ -21,7 +21,9 @@
       <%= tag.value %> | 
     <% end %>
 
-    <%= link_to 'Edit', edit_project_path(@project) %>
+    <% if is_admin? %>
+      <%= link_to 'Edit', edit_project_path(@project) %>
+    <% end %>
   </p>
 
 </div>
