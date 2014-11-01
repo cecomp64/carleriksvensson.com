@@ -20,8 +20,25 @@
   <ul class="social_buttons">
     <li><%=link_to image_tag("facebook.png", :border => 0, :width => "36px", :alt => "Facebook"), "https://www.facebook.com/carleriksvensson", :target => "_blank" %></li>
     <li><%=link_to image_tag("googleplus.png", :border => 0, :width => "36px", :alt => "GooglePlus"), "https://plus.google.com/+CarlErikSvensson", :target => "_blank" %></li>
-    <li><%=link_to image_tag("linkedin.png", :border => 0, :width => "36px", :alt => "LinkedIn"), "www.linkedin.com/in/carleriksvensson/", :target => "_blank" %> </li>
+    <li><%=link_to image_tag("linkedin.png", :border => 0, :width => "36px", :alt => "LinkedIn"), "http://www.linkedin.com/in/carleriksvensson/", :target => "_blank" %> </li>
     <li><%=link_to image_tag("github_white.png", :border => 0, :width => "36px", :alt => "GitHub"), "https://github.com/cecomp64", :target => "_blank" %></li>
   </ul>
 
+  <% if logged_in? %>
+    <div id="user_info">
+      Welcome,
+      <%= link_to current_user.name.titleize, current_user %>.
+      <%= link_to "Logout", logout_path, method: "delete" %>
+    </div>
+  <% end %>
 </div>
+
+<% if flash[:info] %>
+  <div id="flash" class="info">
+    <%= flash[:info] %>
+  </div>
+<% elsif flash[:error] %>
+  <div id="flash" class="error">
+    <%= flash[:error] %>
+  </div>
+<% end %>
