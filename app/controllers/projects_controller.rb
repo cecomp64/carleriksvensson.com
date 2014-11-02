@@ -78,7 +78,7 @@ class ProjectsController < ApplicationController
     end
 
     respond_to do |format|
-      format.html { render :types }
+      format.html { render :index }
       format.json { head :no_content }
     end
   end

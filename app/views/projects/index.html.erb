@@ -1,16 +1,18 @@
 
-  <% if @projects.size > 0 %>
-    <% @projects.each do |project| %>
-      <% @project = project %>
-      <%= render "project" %>
-    <% end %>
-  <% else %>
-    No projects to disaply, yet.
+<% if @projects.size > 0 %>
+  <% @projects.each do |project| %>
+    <% @project = project %>
+    <%= render "project" %>
   <% end %>
-
+<% else %>
   <p class="proj_edit">
-  <% if is_admin? %>
-    <%= link_to 'New Project', new_project_path %>
-  <% end %>
+    No projects to disaply, yet.
   </p>
+<% end %>
+
+<p class="proj_edit">
+<% if is_admin? %>
+  <%= link_to 'New Project', new_project_path %>
+<% end %>
+</p>
 
