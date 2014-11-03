@@ -1,18 +1,22 @@
 
+
 <% if @projects.size > 0 %>
+  <div id="project-tiles">
   <% @projects.each do |project| %>
     <% @project = project %>
     <%= render "project" %>
   <% end %>
+  </div>
 <% else %>
   <p class="proj_edit">
-    No projects to disaply, yet.
+    No projects to disaply, yet.  Please try <%= link_to 'All Projects', projects_path  %>
   </p>
 <% end %>
 
 <p class="proj_edit">
 <% if is_admin? %>
-  <%= link_to 'New Project', new_project_path %>
+  <%= link_to 'New Project', new_project_path %> |
 <% end %>
+<%= link_to 'All Projects', projects_path  %>
 </p>
 

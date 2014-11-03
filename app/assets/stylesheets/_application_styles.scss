@@ -325,7 +325,22 @@ div#project_page {
   }
 }
 
+div#project-tiles {
+  -moz-column-count: 2;
+  -moz-column-gap: 0;
+  -webkit-column-count: 2;
+  -webkit-column-gap: 0;
+  column-count: 2;
+  column-gap: 0;
+  width: 100%;
+}
+
 div.project {
+  // Column behavior
+  -webkit-column-break-inside: avoid;
+  -moz-column-break-inside: avoid;
+  column-break-inside: avoid;
+
   background: $blue;
   overflow: auto;
   margin-bottom: 30px;
@@ -334,7 +349,7 @@ div.project {
   padding-left: 20px;
   padding-right: 20px;
   color: white;
-  width: 40%;
+  width: 80%;
   float: left;
 
   img {
@@ -346,5 +361,12 @@ div.project {
   p.description {
     display: inline;
     clear: none;
+
+    a {
+      color: white;
+    }
+    a.hover {
+      color: white;
+    }
   }
 }

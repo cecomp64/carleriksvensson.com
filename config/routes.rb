@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   resources :tags
 
-  get 'projects/group/:tags' => 'projects#types', as: :project_type, :tags => /[A-Za-z,]+/
+  get 'projects/group/:tags' => 'projects#types', as: :project_type, :tags => /[A-Za-z,_]+/
   resources :projects
 
   # Static pages

@@ -1,7 +1,7 @@
 <div class="project">
 
   <% if @project.url %>
-    <h2><%= link_to @project.title, @project.url %></h2>
+    <h2><%= link_to @project.title, @project.url, :target => "new" %></h2>
   <% else %>
     <h2><%= @project.title %></h2>
   <% end %>
@@ -9,20 +9,28 @@
   <% if @project.picture %>
     <%= image_tag @project.picture, :width => "200", :height => "200" %>
   <% else %>
-    <%= image_tag "default_project.png", :width => "200", :height => "200" %>
+    <%= #image_tag "default_project.png", :width => "200", :height => "200" 
+    %>
   <% end %>
 
   <p class="description">
-    <%= @project.description %>
+    <% if @project.url %>
+      <%= link_to @project.description, @project.url, :target => "new" %>
+    <% else %>
+      <%= @project.description %>
+    <% end %>
   </p>
 
   <p>
     <% @project.tags.each do |tag| %>
-      <%= tag.value %> | 
+      | <%= link_to url2tag(tag.value), project_type_path(tag2url(tag.value)) %>
+    <% end %>
+    <% if @project.tags.size > 0 %>
+      |
     <% end %>
 
     <% if is_admin? %>
-      <%= link_to 'Edit', edit_project_path(@project) %>
+      <%= link_to 'Edit', edit_project_path(@project) %> |
     <% end %>
   </p>
 

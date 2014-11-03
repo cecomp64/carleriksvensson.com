@@ -72,7 +72,8 @@ class ProjectsController < ApplicationController
     
     @projects = []
     tags.each do |tag|
-      Project.joins(:tags).where(tags: {value: "code"}).each do |project|
+      tag = url2tag(tag)
+      Project.joins(:tags).where(tags: {value: tag}).each do |project|
         @projects << project
       end
     end
