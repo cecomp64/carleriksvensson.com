@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
-  before_action :admin_only, only: [:new, :edit]
+  before_action :admin_only, only: [:new, :edit, :update, :destroy]
 
   # GET /projects
   # GET /projects.json
@@ -92,13 +92,27 @@ class ProjectsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def project_params
-      params.require(:project).permit(:url, :picture, :description, :title, :tags)
+      params.require(:project).permit(:url, :picture, :description, :title, :tags, :primary_image_id, :images)
     end
 
     def parse_update_tags(parameters, update)
       tags = parameters.delete(:tags)
       tags = tags.split(',')
       saved = false
+
+      images = params[:project][:images]
+
+      if (images) 
+        images.each do |img_id|
+          # Remove this image from project
+          @project.images.find_by(id: img_id).destroy
+
+          # Reset primary image id if necessary
+          if (parameters[:primary_image_id] == img_id)
+            parameters[:primary_image_id] = nil
+          end
+        end
+      end # each removed image
 
       if (update)
         saved = @project.update(parameters)

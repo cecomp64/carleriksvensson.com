@@ -6,8 +6,8 @@
     <h2><%= @project.title %></h2>
   <% end %>
 
-  <% if @project.picture %>
-    <%= image_tag @project.picture, :width => "200", :height => "200" %>
+  <% if @project.primary_image %>
+    <%= image_tag @project.primary_image.file.url, :width => "200", :height => "200", :class => "primary_img" %>
   <% else %>
     <%= #image_tag "default_project.png", :width => "200", :height => "200" 
     %>
@@ -21,7 +21,7 @@
     <% end %>
   </p>
 
-  <p>
+  <p style="clear:both">
     <% @project.tags.each do |tag| %>
       | <%= link_to url2tag(tag.value), project_type_path(tag2url(tag.value)) %>
     <% end %>
@@ -32,6 +32,18 @@
     <% if is_admin? %>
       <%= link_to 'Edit', edit_project_path(@project) %> |
     <% end %>
+  </p>
+
+  <p class="icons">
+  <% @project.images.each do |img| %>
+    <% #if img.id != @project.primary_image_id 
+    %>
+    <% if @project.images.size > 1 %>
+      <%= link_to img.file.url, :target => "new" do %>
+        <%= image_tag img.file.url(:icon), class: "icon_img" %>
+      <% end %>
+    <% end %>
+  <% end %>
   </p>
 
 </div>

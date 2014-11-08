@@ -1,5 +1,6 @@
-<div id="left_half">
-  <%= form_for(@project) do |f| %>
+<%= form_for(@project) do |f| %>
+  <h2>Edit Project</h2>
+  <div id="left_half">
     <% if @project.errors.any? %>
       <div id="error_explanation">
         <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
@@ -15,10 +16,6 @@
     <div class="field">
       <%= f.label :url %><br>
       <%= f.text_field :url %>
-    </div>
-    <div class="field">
-      <%= f.label :picture %><br>
-      <%= f.text_field :picture %>
     </div>
     <div class="field">
       <%= f.label :title %><br>
@@ -41,28 +38,31 @@
     <div class="actions">
       <%= f.submit %>
     </div>
-  <% end %>
+  </div>
 
+  <div id="right_half">
+    <h2>Project Images</h2>
+    <% @project.images.each do |img| %>
+      <div class="image_edit">
+        <%= image_tag img.file.url(:small) %> <br/>
+        <%= f.radio_button(:primary_image_id, img.id) %>
+        <%= f.label("primary_image_id_#{img.id}", "Primary Image", :selected => (@project.primary_image_id == img.id)) %><br/>
+        <%= f.check_box(:images, {:multiple => true}, img.id, nil) %>
+        <%= f.label("images_#{img.id}", "Remove Image") %>
+      </div>
+    <% end %>
+  </div>
+
+<% end %>
+
+<div class="add_image">
   <h2>Add an Image</h2>
   <% @image = Image.new %>
   <%= form_for(@image, :html => {:multipart => true}) do |f| %>
-    <%= f.check_box(:primary) %>
-    <%= f.label(:primary, "Primary Image") %>
     <%= f.hidden_field :project_id, :value => @project.id %>
-    <%= f.label :file %><br/>
+    <%= f.hidden_field :requestor, :value => "project" %>
     <%= f.file_field :file %>
     <br/>
-    <%= f.submit %>
+    <%= f.submit "Add Image"%>
   <% end %>
- 
-</div>
-
-<div id="right_half">
-  <h2>Project Images</h2>
-
-  <% @project.images.each do |img| %>
-    <%= image_tag img.file.url(:small) %>
-  <% end %>
-
- 
-</div>
+</div> 

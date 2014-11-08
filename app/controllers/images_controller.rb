@@ -1,5 +1,6 @@
 class ImagesController < ApplicationController
   before_action :set_image, only: [:show, :edit, :update, :destroy]
+  before_action :admin_only
 
   # GET /images
   # GET /images.json
@@ -24,11 +25,18 @@ class ImagesController < ApplicationController
   # POST /images
   # POST /images.json
   def create
-    @image = Image.new(image_params)
+    prms = image_params
+    requestor = prms.delete(:requestor)
+    @image = Image.new(prms)
+
+    redir_path = @image
+    if (requestor == "project")
+      redir_path = edit_project_path(prms[:project_id])
+    end
 
     respond_to do |format|
       if @image.save
-        format.html { redirect_to @image, notice: 'Image was successfully created.' }
+        format.html { redirect_to redir_path, notice: 'Image was successfully created.' }
         format.json { render :show, status: :created, location: @image }
       else
         format.html { render :new }
@@ -69,6 +77,6 @@ class ImagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def image_params
-      params.require(:image).permit(:primary, :project_id, :file)
+      params.require(:image).permit(:primary, :project_id, :file, :requestor)
     end
 end

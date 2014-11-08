@@ -42,3 +42,9 @@
     <%= flash[:error] %>
   </div>
 <% end %>
+
+<% if notice %>
+  <div id="flash" class="info">
+    <%= notice %>
+  </div>
+<% end %>

@@ -13,14 +13,6 @@ div#project_page {
   }
 }
 
-div#left_half {
-  float:left;
-  margin-right: 50px;
-}
-
-div#right_half {
-}
-
 div#project-tiles {
   -moz-column-count: 2;
   -moz-column-gap: 0;
@@ -65,4 +57,31 @@ div.project {
       color: white;
     }
   }
+}
+
+.icon_img {
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.primary_img {
+  margin-bottom: 10px;
+}
+
+// Edit styles
+div#left_half {
+  float:left;
+  margin-right: 50px;
+}
+
+div#right_half {
+}
+
+div.image_edit {
+  float: left;
+}
+
+div.add_image {
+  clear: both;
 }
