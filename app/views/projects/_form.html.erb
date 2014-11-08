@@ -1,42 +1,68 @@
-<%= form_for(@project) do |f| %>
-  <% if @project.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
-
-      <ul>
-      <% @project.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<div id="left_half">
+  <%= form_for(@project) do |f| %>
+    <% if @project.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+  
+        <ul>
+        <% @project.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+  
+    <div class="field">
+      <%= f.label :url %><br>
+      <%= f.text_field :url %>
+    </div>
+    <div class="field">
+      <%= f.label :picture %><br>
+      <%= f.text_field :picture %>
+    </div>
+    <div class="field">
+      <%= f.label :title %><br>
+      <%= f.text_field :title %>
+    </div>
+    <div class="field">
+      <%= f.label :description %><br>
+      <%= f.text_area :description, size: "50x10" %>
+    </div>
+    <div class="field">
+      <%
+        tag_s = ""
+        @project.tags.each do |tag|
+          tag_s += "#{tag.value},"
+        end
+      %>
+      <%= f.label :tags %><br>
+      <%= f.text_field :tags, value: tag_s %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :url %><br>
-    <%= f.text_field :url %>
-  </div>
-  <div class="field">
-    <%= f.label :picture %><br>
-    <%= f.text_field :picture %>
-  </div>
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description, size: "50x10" %>
-  </div>
-  <div class="field">
-    <%
-      tag_s = ""
-      @project.tags.each do |tag|
-        tag_s += "#{tag.value},"
-      end
-    %>
-    <%= f.label :tags %><br>
-    <%= f.text_field :tags, value: tag_s %>
-  <div class="actions">
+  <h2>Add an Image</h2>
+  <% @image = Image.new %>
+  <%= form_for(@image, :html => {:multipart => true}) do |f| %>
+    <%= f.check_box(:primary) %>
+    <%= f.label(:primary, "Primary Image") %>
+    <%= f.hidden_field :project_id, :value => @project.id %>
+    <%= f.label :file %><br/>
+    <%= f.file_field :file %>
+    <br/>
     <%= f.submit %>
-  </div>
-<% end %>
+  <% end %>
+ 
+</div>
+
+<div id="right_half">
+  <h2>Project Images</h2>
+
+  <% @project.images.each do |img| %>
+    <%= image_tag img.file.url(:small) %>
+  <% end %>
+
+ 
+</div>

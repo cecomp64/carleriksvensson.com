@@ -21,3 +21,6 @@
 
 # Ignore remote db
 config/remote_db.yml
+
+# Ignore paperclip attachements for now
+public/system/images/*

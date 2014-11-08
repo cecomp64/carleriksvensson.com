@@ -11,23 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141103053855) do
+ActiveRecord::Schema.define(version: 20141108162524) do
 
   create_table "images", force: true do |t|
-    t.integer  "primary"
     t.integer  "project_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "file_file_name"
+    t.string   "file_content_type"
+    t.integer  "file_file_size"
+    t.datetime "file_updated_at"
   end
 
   create_table "projects", force: true do |t|
     t.string   "kind"
     t.string   "url"
     t.string   "picture"
-    t.text     "description", limit: 255
+    t.text     "description",      limit: 255
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "primary_image_id"
   end
 
   create_table "tags", force: true do |t|
