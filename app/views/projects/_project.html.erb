@@ -7,7 +7,7 @@
   <% end %>
 
   <% if @project.primary_image %>
-    <%= image_tag @project.primary_image.file.url, :width => "200", :height => "200", :class => "primary_img" %>
+    <%= image_tag @project.primary_image.file.url, :width => "200", :class => "primary_img" %>
   <% else %>
     <%= #image_tag "default_project.png", :width => "200", :height => "200" 
     %>

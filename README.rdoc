@@ -27,6 +27,16 @@ This is an app for my personal website.
 
 rails g scaffold Project type:string url:string picture:string description:string title:string
 
+== Backup, Restore, and Seed Data
+
+Some rails tasks handle backing up and restoring data -- useful for migrations from development to production:
+
+```
+rake backup_sqlite3 DB=db/development.sqlite3
+rake db:drop
+rake restore DUMP=db/seed.sql
+```
+
 == Props
 
 * Social media icons from http://www.graphicsfuel.com/2012/09/15-free-social-media-icons-psd-png/
