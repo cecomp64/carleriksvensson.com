@@ -54,7 +54,3 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Assets in prod
 gem 'rails_12factor', group: :production
-
-# DB backup!
-gem 'backup'
-gem 'mail'
