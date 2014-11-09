@@ -24,6 +24,7 @@ task 'backup_sqlite3' do
   sh "sed -i '' 's/varchar(255)/text/g' #{filename}_pg"
   sh "sed -i '' 's/text(255)/text/g' #{filename}_pg"
   sh "sed -i '' 's/.*sqlite_sequence.*//g' #{filename}_pg"
+  sh "sed -i '' 's/.*PRAGMA.*//g' #{filename}_pg"
 end
 
 desc "Restore from a dump file (default = #{dump}"
