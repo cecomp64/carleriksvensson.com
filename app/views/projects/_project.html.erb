@@ -40,7 +40,7 @@
     %>
     <% if @project.images.size > 1 %>
       <%= link_to img.file.url, :target => "new" do %>
-        <%= image_tag img.file.url(:icon), class: "icon_img" %>
+        <%= image_tag img.file.url(:icon), class: "icon_img circle transparent" %>
       <% end %>
     <% end %>
   <% end %>

@@ -68,10 +68,10 @@ class ProjectsController < ApplicationController
   # Group projects by the type given in the URL
   # Display a summary of each project
   def types
-    tags = params[:tags].split(',')
+    @tags = params[:tags].split(',')
     
     @projects = []
-    tags.each do |tag|
+    @tags.each do |tag|
       tag = url2tag(tag)
       Project.joins(:tags).where(tags: {value: tag}).each do |project|
         @projects << project

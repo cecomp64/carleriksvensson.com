@@ -44,3 +44,9 @@ task 'restore' => :environment do
     end
   end
 end
+
+task 'restore_heroku' => :environment do
+  #heroku pg:reset HEROKU_POSTGRESQL_GOLD_URL
+  #heroku run rake db:migrate
+  #heroku run rake db:seed
+end

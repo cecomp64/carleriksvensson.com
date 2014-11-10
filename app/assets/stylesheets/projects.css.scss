@@ -23,11 +23,22 @@ div#project-tiles {
   width: 100%;
 }
 
+$proj_shadow: 8px 8px 8px 0px $header_color;
+
 div.project {
   // Column behavior
   -webkit-column-break-inside: avoid;
   -moz-column-break-inside: avoid;
   column-break-inside: avoid;
+  border-radius: 5px;
+
+  -moz-box-shadow:    $proj_shadow;
+  -webkit-box-shadow: $proj_shadow;
+  box-shadow:         $proj_shadow;
+
+  // Hack - Webkit doesn't like rounded corners and opacity!
+  opacity: 0.999999;
+  filter: alpha(opacity=99); /* For IE8 and earlier */
 
   background: $blue;
   overflow: auto;
@@ -57,6 +68,17 @@ div.project {
       color: white;
     }
   }
+}
+
+.transparent {
+  border: 0.001em solid transparent;
+  opacity: 0.4;
+  filter: alpha(opacity=40); /* For IE8 and earlier */
+}
+
+.transparent:hover {
+  opacity: 1;
+  filter: alpha(opacity=100); /* For IE8 and earlier */
 }
 
 .icon_img {

@@ -1,4 +1,18 @@
+<% #provide(:title_text, '[' +  link_to('All Projects', projects_path).html_safe + ']') %>
+<% 
+  if (@tags)
+    provide(:title_text, link_to('[ All Projects ]', projects_path))
+    title = "Projects [ "
 
+    @tags.each do |tag|
+      title += url2tag(tag).titleize + " "
+    end
+
+    provide(:title, "#{title}]" )
+  else
+    provide(:title, "Projects")
+  end
+%>
 
 <% if @projects.size > 0 %>
   <div id="project-tiles">
@@ -17,6 +31,5 @@
 <% if is_admin? %>
   <%= link_to 'New Project', new_project_path %> |
 <% end %>
-<%= link_to 'All Projects', projects_path  %>
 </p>
 
