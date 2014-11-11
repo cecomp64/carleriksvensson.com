@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :resume_items
+
+  resources :resumes
+
   resources :images
 
   get 'login' => 'sessions#new'
@@ -15,7 +19,6 @@ Rails.application.routes.draw do
   # Static pages
   get 'about' => 'static_pages#about', as: :about
   get 'contact' => 'static_pages#contact', as: :contact
-  get 'resume' => 'static_pages#resume', as: :resume
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

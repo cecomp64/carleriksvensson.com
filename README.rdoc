@@ -31,11 +31,20 @@ rails g scaffold Project type:string url:string picture:string description:strin
 
 Some rails tasks handle backing up and restoring data -- useful for migrations from development to production:
 
-```
-rake backup_sqlite3 DB=db/development.sqlite3
-rake db:drop
-rake restore DUMP=db/seed.sql
-```
+  rake backup_sqlite3 DB=db/development.sqlite3
+  rake db:drop
+  rake restore DUMP=db/seed.sql
+
+== Resume
+
+rails g scaffold Resume name:string title:string objective:text
+has_many :resume_items
+has_attachment (pdf version) ? Generate it?
+
+rails g scaffold ResumeItem job_title:string start:date end:date description:text location:string
+has_many :tags
+rails g migration AddResumeItemIdToTag
+
 
 == Props
 
