@@ -32,7 +32,7 @@ rails g scaffold Project type:string url:string picture:string description:strin
 Some rails tasks handle backing up and restoring data -- useful for migrations from development to production:
 
   rake backup_sqlite3 DB=db/development.sqlite3
-  rake db:drop
+  rake db:drop (heroku pg:reset DATABASE_URL)
   rake restore DUMP=db/seed.sql
 
 == Resume
