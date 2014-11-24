@@ -46,6 +46,13 @@ has_many :tags
 rails g migration AddResumeItemIdToTag
 
 
+== Blog
+
+rails g scaffold Post content:text title:text posted_on:date published:boolean user_id:int
+rails g scaffold Comment content:text author_url:text author:string post_id:int
+
+TODO: Get facebook, google plus sharing
+
 == Props
 
 * Social media icons from http://www.graphicsfuel.com/2012/09/15-free-social-media-icons-psd-png/

@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :comments
+
+  resources :posts
+
   resources :resume_items
 
   # Override the show method for resume resource
