@@ -1,0 +1,28 @@
+<%= render "layouts/header" %>
+
+<div id="body">
+  <div id="posts_page">
+    <div id="post_archive">
+      <h2>Recent Posts</h2>
+      <ul>
+        <% @recent_posts.each do |post| %>
+          <li><%= link_to "#{post.posted_on.strftime("%m.%d")} #{post.title}", post %></li>
+        <% end %>
+      </ul>
+    
+      <% if !@archive_posts.nil? && @archive_posts.count > 0 %>
+        <h2>Archive</h2>
+        <ul>
+          <% @archive_posts.each do |post| %>
+            <li><%= link_to post.title, post %></li>
+          <% end %>
+        </ul>
+      <% end %>
+    </div>
+
+    <%= yield %>
+
+  </div>
+</div>
+
+<%= render "layouts/footer" %>

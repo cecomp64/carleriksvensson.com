@@ -1,10 +1,13 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_posts
+  before_action :admin_only, only: [:show, :index, :new, :update, :destroy]
+  before_action :require_login, only: [:new, :update, :destroy]
 
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @post = Post.all.where(:published => true).order("posted_on DESC").first
   end
 
   # GET /posts/1
@@ -25,6 +28,11 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(post_params)
+    @post.user_id = current_user.id
+
+    if (@post.published) 
+      @post.posted_on = Date.today
+    end
 
     respond_to do |format|
       if @post.save
@@ -40,6 +48,12 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
   def update
+    @post.user_id = current_user.id
+
+    if (@post.published) 
+      @post.posted_on = Date.today
+    end
+
     respond_to do |format|
       if @post.update(post_params)
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }
@@ -65,6 +79,13 @@ class PostsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_post
       @post = Post.find(params[:id])
+    end
+
+    # Setup the posts for the navigation menu
+    # TODO: Split it up by recent and archive
+    def set_posts
+      @recent_posts = Post.all
+      @archive_posts = nil
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
