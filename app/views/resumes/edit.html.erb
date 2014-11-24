@@ -1,6 +1,14 @@
 <h1>Editing resume</h1>
 
 <%= render 'form' %>
-
-<%= link_to 'Show', @resume %> |
+<%= link_to 'Show', resume_title_path(@resume.title) %> |
 <%= link_to 'Back', resumes_path %>
+
+<h2>Resume Items</h2>
+<%= render "resume_items/list" %>
+
+<% if @resume.id %>
+  <h2>New Resume Item</h2>
+  <%= render "resume_items/form" %>
+<% end %>
+

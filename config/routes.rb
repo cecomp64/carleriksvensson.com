@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   resources :resume_items
 
+  # Override the show method for resume resource
+  get 'resume/:title' => 'resumes#show', as: :resume_title, :title => /[A-Za-z,_0-9 ]+/
+
   resources :resumes
 
   resources :images

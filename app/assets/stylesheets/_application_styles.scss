@@ -8,6 +8,11 @@ $orange: #ce7c3f;
 $red: #ce463f;
 $blue: #368eb1;
 $footer_menu: #acacac;
+$gray_text: #f2f2f2;
+
+$resume_orange: #aa7b59;
+$resume_red: #aa5d59;
+$resume_blue: #50849a;
 
 // Generic document
 a {
@@ -210,10 +215,14 @@ ul.footer_nav {
 // Flash
 div#flash {
   margin:0;
-  padding: 20px;
+  height: 50px;
   float: left;
   width: 100%;
   font-weight: bold;
+
+  p {
+    margin: 15px 0 0 20px;
+  }
 }
 
 .info {

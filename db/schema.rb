@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141111012953) do
+ActiveRecord::Schema.define(version: 20141123234512) do
 
   create_table "images", force: true do |t|
     t.integer  "project_id"
@@ -43,6 +43,8 @@ ActiveRecord::Schema.define(version: 20141111012953) do
     t.integer  "resume_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "institution"
+    t.boolean  "current"
   end
 
   create_table "resumes", force: true do |t|

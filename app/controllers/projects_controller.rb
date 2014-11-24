@@ -96,8 +96,8 @@ class ProjectsController < ApplicationController
     end
 
     def parse_update_tags(parameters, update)
-      tags = parameters.delete(:tags)
-      tags = tags.split(',')
+      
+      update_tags(tag_vals: get_tags_from_params(parameters), project_id: @project.id)
       saved = false
 
       images = params[:project][:images]
@@ -119,17 +119,6 @@ class ProjectsController < ApplicationController
       else
         @project = Project.new(parameters)
         saved = @project.save
-      end
-
-      if (saved)
-        # Remove old tags
-        @project.tags.each do |tag|
-          @project.tags.destroy(tag)
-        end
-
-        tags.each do |tag|
-          @project.tags << Tag.new(value: tag.strip)
-        end
       end
 
       return saved

@@ -1,19 +1,25 @@
-<p id="notice"><%= notice %></p>
+<% provide(:title, "#{@resume.title.titleize} Resume") %>
+<div id="objective" class="resume_item">
+  <h2>Objective</h2>
 
-<p>
-  <strong>Name:</strong>
-  <%= @resume.name %>
-</p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @resume.title %>
-</p>
-
-<p>
-  <strong>Objective:</strong>
   <%= @resume.objective %>
-</p>
+</div>
 
-<%= link_to 'Edit', edit_resume_path(@resume) %> |
-<%= link_to 'Back', resumes_path %>
+<% @educations.each do |ri| %>
+  <% @resume_item = ri %>
+  <%= render "resume_items/resume_item" %>
+<% end %>
+
+<% @jobs.each do |ri| %>
+  <% @resume_item = ri %>
+  <%= render "resume_items/resume_item" %>
+<% end %>
+
+<% @skills.each do |ri| %>
+  <% @resume_item = ri %>
+  <%= render "resume_items/resume_item" %>
+<% end %>
+
+<% if is_admin? %>
+  <%= link_to 'Edit', edit_resume_path(@resume) %>
+<% end %>

@@ -33,22 +33,6 @@
   <% end %>
 </div>
 
-<% if flash[:info] %>
-  <div id="flash" class="info">
-    <%= flash[:info] %>
-  </div>
-<% elsif flash[:error] %>
-  <div id="flash" class="error">
-    <%= flash[:error] %>
-  </div>
-<% end %>
-
-<% if notice %>
-  <div id="flash" class="info">
-    <%= notice %>
-  </div>
-<% end %>
-
 <% page_title = yield(:title) %>
 <% if (page_title) %>
   <div id="page_title">
@@ -56,3 +40,24 @@
   </div>
 <% end %>
 
+<% if flash[:info] %>
+  <div id="flash" class="info">
+    <p>
+    <%= flash[:info] %>
+    </p>
+  </div>
+<% elsif flash[:error] %>
+  <div id="flash" class="error">
+    <p>
+    <%= flash[:error] %>
+    </p>
+  </div>
+<% end %>
+
+<% if notice %>
+  <div id="flash" class="info">
+    <p>
+    <%= notice %>
+    </p>
+  </div>
+<% end %>

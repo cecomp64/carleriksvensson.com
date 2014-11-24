@@ -24,11 +24,15 @@ class ResumeItemsController < ApplicationController
   # POST /resume_items
   # POST /resume_items.json
   def create
-    @resume_item = ResumeItem.new(resume_item_params)
+    parameters = resume_item_params;
+    tags = get_tags_from_params(parameters)
+
+    @resume_item = ResumeItem.new(parameters)
 
     respond_to do |format|
       if @resume_item.save
-        format.html { redirect_to @resume_item, notice: 'Resume item was successfully created.' }
+        update_tags(tag_vals: tags, resume_item_id: @resume_item.id)
+        format.html { redirect_to request.referrer, notice: 'Resume item was successfully created.' }
         format.json { render :show, status: :created, location: @resume_item }
       else
         format.html { render :new }
@@ -40,8 +44,11 @@ class ResumeItemsController < ApplicationController
   # PATCH/PUT /resume_items/1
   # PATCH/PUT /resume_items/1.json
   def update
+    parameters = resume_item_params;
+    update_tags(tag_vals: get_tags_from_params(parameters), resume_item_id: @resume_item.id)
+
     respond_to do |format|
-      if @resume_item.update(resume_item_params)
+      if @resume_item.update(parameters)
         format.html { redirect_to @resume_item, notice: 'Resume item was successfully updated.' }
         format.json { render :show, status: :ok, location: @resume_item }
       else
@@ -69,6 +76,6 @@ class ResumeItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def resume_item_params
-      params.require(:resume_item).permit(:job_title, :start, :end, :description, :location)
+      params.require(:resume_item).permit(:job_title, :start, :end, :description, :location, :resume_id, :tags, :institution, :current)
     end
 end

@@ -1,0 +1,30 @@
+<% 
+  tags = ""
+  @resume_item.tags.each {|tag| tags += "#{tag.value} "}
+%>
+
+<div class="resume_item <%= tags %>">
+
+<p>
+<h3><%= @resume_item.job_title %></h3>
+<% if !@resume_item.institution.nil? %>
+  at <%= @resume_item.institution %>
+  in <%= @resume_item.location %>
+<% end %>
+<br/>
+(<%= @resume_item.start.strftime("%B, %Y") %> - 
+<%= @resume_item.end.nil? || @resume_item.current ? "Today" : @resume_item.end.strftime("%B, %Y") %>)
+</p>
+
+<p>
+  <%= @resume_item.description %>
+</p>
+
+
+<p>
+  <strong>Tags:</strong>
+  <%= tags %>
+</p>
+
+</div>
+

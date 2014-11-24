@@ -1,3 +1,43 @@
 // Place all the styles related to the Resumes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'application_styles';
+
+div#resume_page {
+  margin-left: 50px;
+}
+
+div.resume_item {
+  width: 80%;
+  padding: 10px;
+  border-radius: 10px;
+  color: $gray_text;
+  margin-bottom: 20px;
+
+  h2 {
+    margin-top: 0px;
+    display: block;
+    color: white;
+  }
+
+  h3 {
+    margin: 0;
+    padding: 0;
+    display: inline;
+    font-size: 18px;
+    color: white;
+  }
+}
+
+// Styles for different types of resume items
+div#objective {
+  background: $resume_orange;
+}
+
+div.education {
+  background: $resume_red;
+}
+
+div.work {
+  background: $resume_blue;
+}

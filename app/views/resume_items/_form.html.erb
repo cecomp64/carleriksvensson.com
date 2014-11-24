@@ -22,6 +22,8 @@
   <div class="field">
     <%= f.label :end %><br>
     <%= f.date_select :end %>
+    <%= f.label :current %>
+    <%= f.check_box(:current, {:multiple => false}, true, nil) %>
   </div>
   <div class="field">
     <%= f.label :description %><br>
@@ -31,7 +33,24 @@
     <%= f.label :location %><br>
     <%= f.text_field :location %>
   </div>
+  <div class="field">
+    <%= f.label :institution %><br>
+    <%= f.text_field :institution %>
+  </div>
+  <div class="field">
+    <%
+      tag_s = ""
+      @resume_item.tags.each do |tag|
+        tag_s += "#{tag.value},"
+      end
+    %>
+    <%= f.label :tags %><br>
+    <%= f.text_field :tags, value: tag_s %>
+  </div>
+
   <div class="actions">
+    <%= f.hidden_field :resume_id, :value => (!@resume.nil? && !@resume.id.nil?) ? @resume.id : -1 %>
     <%= f.submit %>
   </div>
+
 <% end %>
