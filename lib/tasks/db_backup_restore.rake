@@ -16,7 +16,7 @@ task 'backup_sqlite3' do
   sh "sed -i '' 's/.*BEGIN TRANSACTION.*//g' #{filename}"
   sh "sed -i '' 's/.*COMMIT.*//g' #{filename}"
   sh "sed -i '' 's/.*schema_migrations.*//g' #{filename}"
-  rm "#{filename}_sch #{filename}_dmp"
+  sh "rm -f #{filename}_sch #{filename}_dmp"
 
   # Fix up some sqlite3 to postgres differences
   sh "sed 's/INTEGER PRIAMARY KEY AUTOINCREMENT/SERIAL PRIMARY KEY/g' #{filename} > #{filename}_pg"

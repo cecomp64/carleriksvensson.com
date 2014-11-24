@@ -6,33 +6,83 @@
 
 
 
-INSERT INTO "tags" VALUES(94,'code',41,NULL,'2014-11-03 01:28:05.285740','2014-11-03 01:28:05.287486');
-INSERT INTO "tags" VALUES(95,'sports',41,NULL,'2014-11-03 01:28:05.289147','2014-11-03 01:28:05.290696');
-INSERT INTO "tags" VALUES(96,'open source',41,NULL,'2014-11-03 01:28:05.292009','2014-11-03 01:28:05.293673');
-INSERT INTO "tags" VALUES(97,'web',42,NULL,'2014-11-03 01:28:05.296119','2014-11-03 01:28:05.297669');
-INSERT INTO "tags" VALUES(98,'sports',42,NULL,'2014-11-03 01:28:05.299202','2014-11-03 01:28:05.300671');
-INSERT INTO "tags" VALUES(99,'open source',42,NULL,'2014-11-03 01:28:05.301980','2014-11-03 01:28:05.303393');
-INSERT INTO "tags" VALUES(100,'code',42,NULL,'2014-11-03 01:28:05.304921','2014-11-03 01:28:05.306273');
-INSERT INTO "tags" VALUES(122,'code',40,NULL,'2014-11-08 17:19:11.573799','2014-11-08 17:19:11.573799');
-INSERT INTO "tags" VALUES(123,'sports',40,NULL,'2014-11-08 17:19:11.585604','2014-11-08 17:19:11.585604');
-INSERT INTO "tags" VALUES(124,'open source',40,NULL,'2014-11-08 17:19:11.596923','2014-11-08 17:19:11.596923');
-INSERT INTO "tags" VALUES(146,'code',35,NULL,'2014-11-08 22:35:44.035690','2014-11-08 22:35:44.035690');
-INSERT INTO "tags" VALUES(147,'college',35,NULL,'2014-11-08 22:35:44.038269','2014-11-08 22:35:44.038269');
-INSERT INTO "tags" VALUES(148,'open source',35,NULL,'2014-11-08 22:35:44.041423','2014-11-08 22:35:44.041423');
-INSERT INTO "tags" VALUES(149,'code',38,NULL,'2014-11-08 22:48:48.844390','2014-11-08 22:48:48.844390');
-INSERT INTO "tags" VALUES(150,'web',38,NULL,'2014-11-08 22:48:48.850104','2014-11-08 22:48:48.850104');
-INSERT INTO "tags" VALUES(151,'design',38,NULL,'2014-11-08 22:48:48.852751','2014-11-08 22:48:48.852751');
-INSERT INTO "tags" VALUES(152,'college',38,NULL,'2014-11-08 22:48:48.854644','2014-11-08 22:48:48.854644');
-INSERT INTO "tags" VALUES(153,'code',36,NULL,'2014-11-08 22:59:33.724211','2014-11-08 22:59:33.724211');
-INSERT INTO "tags" VALUES(154,'web',36,NULL,'2014-11-08 22:59:33.727584','2014-11-08 22:59:33.727584');
-INSERT INTO "tags" VALUES(155,'open source',36,NULL,'2014-11-08 22:59:33.729452','2014-11-08 22:59:33.729452');
-INSERT INTO "tags" VALUES(156,'nonprofit',36,NULL,'2014-11-08 22:59:33.731991','2014-11-08 22:59:33.731991');
-INSERT INTO "tags" VALUES(159,'nonprofit',37,NULL,'2014-11-08 23:01:50.338415','2014-11-08 23:01:50.338415');
-INSERT INTO "tags" VALUES(160,'design',37,NULL,'2014-11-08 23:01:50.340666','2014-11-08 23:01:50.340666');
-INSERT INTO "tags" VALUES(173,'web',39,NULL,'2014-11-08 23:28:22.461913','2014-11-08 23:28:22.461913');
-INSERT INTO "tags" VALUES(174,'design',39,NULL,'2014-11-08 23:28:22.469187','2014-11-08 23:28:22.469187');
-INSERT INTO "tags" VALUES(175,'college',39,NULL,'2014-11-08 23:28:22.475989','2014-11-08 23:28:22.475989');
-INSERT INTO "tags" VALUES(176,'music',39,NULL,'2014-11-08 23:28:22.484150','2014-11-08 23:28:22.484150');
+
+
+
+
+
+
+
+
+INSERT INTO "tags" VALUES(94,'code',41,NULL,'2014-11-03 01:28:05.285740','2014-11-03 01:28:05.287486',NULL);
+INSERT INTO "tags" VALUES(96,'open source',41,NULL,'2014-11-03 01:28:05.292009','2014-11-03 01:28:05.293673',NULL);
+INSERT INTO "tags" VALUES(97,'web',42,NULL,'2014-11-03 01:28:05.296119','2014-11-03 01:28:05.297669',NULL);
+INSERT INTO "tags" VALUES(98,'sports',42,NULL,'2014-11-03 01:28:05.299202','2014-11-03 01:28:05.300671',NULL);
+INSERT INTO "tags" VALUES(99,'open source',42,NULL,'2014-11-03 01:28:05.301980','2014-11-03 01:28:05.303393',NULL);
+INSERT INTO "tags" VALUES(100,'code',42,NULL,'2014-11-03 01:28:05.304921','2014-11-03 01:28:05.306273',NULL);
+INSERT INTO "tags" VALUES(122,'code',40,NULL,'2014-11-08 17:19:11.573799','2014-11-08 17:19:11.573799',NULL);
+INSERT INTO "tags" VALUES(123,'sports',40,NULL,'2014-11-08 17:19:11.585604','2014-11-08 17:19:11.585604',NULL);
+INSERT INTO "tags" VALUES(124,'open source',40,NULL,'2014-11-08 17:19:11.596923','2014-11-08 17:19:11.596923',NULL);
+INSERT INTO "tags" VALUES(146,'code',35,NULL,'2014-11-08 22:35:44.035690','2014-11-08 22:35:44.035690',NULL);
+INSERT INTO "tags" VALUES(147,'college',35,NULL,'2014-11-08 22:35:44.038269','2014-11-08 22:35:44.038269',NULL);
+INSERT INTO "tags" VALUES(148,'open source',35,NULL,'2014-11-08 22:35:44.041423','2014-11-08 22:35:44.041423',NULL);
+INSERT INTO "tags" VALUES(149,'code',38,NULL,'2014-11-08 22:48:48.844390','2014-11-08 22:48:48.844390',NULL);
+INSERT INTO "tags" VALUES(150,'web',38,NULL,'2014-11-08 22:48:48.850104','2014-11-08 22:48:48.850104',NULL);
+INSERT INTO "tags" VALUES(151,'design',38,NULL,'2014-11-08 22:48:48.852751','2014-11-08 22:48:48.852751',NULL);
+INSERT INTO "tags" VALUES(152,'college',38,NULL,'2014-11-08 22:48:48.854644','2014-11-08 22:48:48.854644',NULL);
+INSERT INTO "tags" VALUES(153,'code',36,NULL,'2014-11-08 22:59:33.724211','2014-11-08 22:59:33.724211',NULL);
+INSERT INTO "tags" VALUES(154,'web',36,NULL,'2014-11-08 22:59:33.727584','2014-11-08 22:59:33.727584',NULL);
+INSERT INTO "tags" VALUES(155,'open source',36,NULL,'2014-11-08 22:59:33.729452','2014-11-08 22:59:33.729452',NULL);
+INSERT INTO "tags" VALUES(156,'nonprofit',36,NULL,'2014-11-08 22:59:33.731991','2014-11-08 22:59:33.731991',NULL);
+INSERT INTO "tags" VALUES(159,'nonprofit',37,NULL,'2014-11-08 23:01:50.338415','2014-11-08 23:01:50.338415',NULL);
+INSERT INTO "tags" VALUES(160,'design',37,NULL,'2014-11-08 23:01:50.340666','2014-11-08 23:01:50.340666',NULL);
+INSERT INTO "tags" VALUES(173,'web',39,NULL,'2014-11-08 23:28:22.461913','2014-11-08 23:28:22.461913',NULL);
+INSERT INTO "tags" VALUES(174,'design',39,NULL,'2014-11-08 23:28:22.469187','2014-11-08 23:28:22.469187',NULL);
+INSERT INTO "tags" VALUES(175,'college',39,NULL,'2014-11-08 23:28:22.475989','2014-11-08 23:28:22.475989',NULL);
+INSERT INTO "tags" VALUES(176,'music',39,NULL,'2014-11-08 23:28:22.484150','2014-11-08 23:28:22.484150',NULL);
+INSERT INTO "tags" VALUES(177,'sports',41,NULL,'2014-11-15 01:39:13.739004','2014-11-15 01:39:13.739004',NULL);
+INSERT INTO "tags" VALUES(178,'work',NULL,NULL,'2014-11-23 02:47:04.840725','2014-11-23 02:47:04.840725',1);
+INSERT INTO "tags" VALUES(181,'verification',NULL,NULL,'2014-11-23 02:49:36.253471','2014-11-23 02:49:36.253471',1);
+INSERT INTO "tags" VALUES(182,'nvidia',NULL,NULL,'2014-11-23 02:49:36.263424','2014-11-23 02:49:36.263424',1);
+INSERT INTO "tags" VALUES(183,'work',NULL,NULL,'2014-11-23 04:18:47.395434','2014-11-23 04:18:47.395434',2);
+INSERT INTO "tags" VALUES(184,'verification',NULL,NULL,'2014-11-23 04:18:47.405215','2014-11-23 04:18:47.405215',2);
+INSERT INTO "tags" VALUES(185,'nvidia',NULL,NULL,'2014-11-23 04:18:47.414151','2014-11-23 04:18:47.414151',2);
+INSERT INTO "tags" VALUES(186,'education',NULL,NULL,'2014-11-23 22:56:05.266417','2014-11-23 22:56:05.266417',3);
+INSERT INTO "tags" VALUES(187,'college',NULL,NULL,'2014-11-23 22:56:05.276635','2014-11-23 22:56:05.276635',3);
+INSERT INTO "tags" VALUES(188,'apple',NULL,NULL,'2014-11-23 23:36:14.617995','2014-11-23 23:36:14.617995',4);
+INSERT INTO "tags" VALUES(189,'work',NULL,NULL,'2014-11-23 23:36:14.638169','2014-11-23 23:36:14.638169',4);
+INSERT INTO "tags" VALUES(190,'verification',NULL,NULL,'2014-11-23 23:36:14.651301','2014-11-23 23:36:14.651301',4);
+INSERT INTO "tags" VALUES(191,'work',NULL,NULL,'2014-11-24 16:28:56.664051','2014-11-24 16:28:56.664051',5);
+INSERT INTO "tags" VALUES(192,'verification',NULL,NULL,'2014-11-24 16:28:56.675291','2014-11-24 16:28:56.675291',5);
+INSERT INTO "tags" VALUES(193,'apple',NULL,NULL,'2014-11-24 16:28:56.686455','2014-11-24 16:28:56.686455',5);
+INSERT INTO "tags" VALUES(194,'work',NULL,NULL,'2014-11-24 16:30:46.408534','2014-11-24 16:30:46.408534',6);
+INSERT INTO "tags" VALUES(195,'verification',NULL,NULL,'2014-11-24 16:30:46.419980','2014-11-24 16:30:46.419980',6);
+INSERT INTO "tags" VALUES(196,'nvidia',NULL,NULL,'2014-11-24 16:30:46.430559','2014-11-24 16:30:46.430559',6);
+INSERT INTO "tags" VALUES(197,'work',NULL,NULL,'2014-11-24 16:32:32.945789','2014-11-24 16:32:32.945789',7);
+INSERT INTO "tags" VALUES(198,'verification',NULL,NULL,'2014-11-24 16:32:32.958477','2014-11-24 16:32:32.958477',7);
+INSERT INTO "tags" VALUES(199,'nvidia',NULL,NULL,'2014-11-24 16:32:32.969918','2014-11-24 16:32:32.969918',7);
+INSERT INTO "tags" VALUES(200,'givechange',NULL,NULL,'2014-11-24 16:34:33.305444','2014-11-24 16:34:33.305444',8);
+INSERT INTO "tags" VALUES(201,'nonprofit',NULL,NULL,'2014-11-24 16:34:33.319304','2014-11-24 16:34:33.319304',8);
+INSERT INTO "tags" VALUES(202,'part time',NULL,NULL,'2014-11-24 16:34:33.330498','2014-11-24 16:34:33.330498',8);
+INSERT INTO "tags" VALUES(203,'web development',NULL,NULL,'2014-11-24 16:34:33.341941','2014-11-24 16:34:33.341941',8);
+INSERT INTO "tags" VALUES(204,'work',NULL,NULL,'2014-11-24 16:36:19.726644','2014-11-24 16:36:19.726644',9);
+INSERT INTO "tags" VALUES(205,'software engineering',NULL,NULL,'2014-11-24 16:36:19.738330','2014-11-24 16:36:19.738330',9);
+INSERT INTO "tags" VALUES(206,'nvidia',NULL,NULL,'2014-11-24 16:36:19.748924','2014-11-24 16:36:19.748924',9);
+INSERT INTO "tags" VALUES(207,'intern',NULL,NULL,'2014-11-24 16:36:19.759450','2014-11-24 16:36:19.759450',9);
+INSERT INTO "tags" VALUES(208,'work',NULL,NULL,'2014-11-24 16:39:45.803363','2014-11-24 16:39:45.803363',10);
+INSERT INTO "tags" VALUES(209,'intel',NULL,NULL,'2014-11-24 16:39:45.813579','2014-11-24 16:39:45.813579',10);
+INSERT INTO "tags" VALUES(210,'verification',NULL,NULL,'2014-11-24 16:39:45.829363','2014-11-24 16:39:45.829363',10);
+INSERT INTO "tags" VALUES(211,'intern',NULL,NULL,'2014-11-24 16:39:45.842306','2014-11-24 16:39:45.842306',10);
+INSERT INTO "tags" VALUES(212,'tools',NULL,NULL,'2014-11-24 16:39:45.853262','2014-11-24 16:39:45.853262',10);
+INSERT INTO "tags" VALUES(213,'work',NULL,NULL,'2014-11-24 16:42:24.768121','2014-11-24 16:42:24.768121',11);
+INSERT INTO "tags" VALUES(214,'intel',NULL,NULL,'2014-11-24 16:42:24.778427','2014-11-24 16:42:24.778427',11);
+INSERT INTO "tags" VALUES(215,'verification',NULL,NULL,'2014-11-24 16:42:24.789484','2014-11-24 16:42:24.789484',11);
+INSERT INTO "tags" VALUES(216,'intern',NULL,NULL,'2014-11-24 16:42:24.799798','2014-11-24 16:42:24.799798',11);
+INSERT INTO "tags" VALUES(217,'college',NULL,NULL,'2014-11-24 16:45:19.622935','2014-11-24 16:45:19.622935',12);
+INSERT INTO "tags" VALUES(218,'web development',NULL,NULL,'2014-11-24 16:45:19.633714','2014-11-24 16:45:19.633714',12);
+INSERT INTO "tags" VALUES(219,'work',NULL,NULL,'2014-11-24 16:45:19.644340','2014-11-24 16:45:19.644340',12);
+INSERT INTO "tags" VALUES(220,'college',NULL,NULL,'2014-11-24 16:58:01.665740','2014-11-24 16:58:01.665740',13);
+INSERT INTO "tags" VALUES(221,'education',NULL,NULL,'2014-11-24 16:58:01.676205','2014-11-24 16:58:01.676205',13);
 INSERT INTO "users" VALUES(1,'Carl Svensson','csvenss2@gmail.com','$2a$10$0wngvo/onJIQWit2TDKajuNxotzSG6hux0eTHWq.Zn1ilV4XuMy8S',1,'2014-10-29 04:39:09.849571','2014-11-01 21:29:07.306307');
 INSERT INTO "users" VALUES(3,'Leah','lgg@lg.com','$2a$10$VCqHsFSXcxm9FOXxU9u9H.MoRlMhf6NhsrjGUQmdnxKQ8mPaAXTYq',NULL,'2014-11-01 21:58:06.767182','2014-11-01 21:58:06.767182');
 INSERT INTO "projects" VALUES(35,NULL,'https://code.google.com/p/wosaic/','','Third place non-technical winner at Engineering Open House, University of Illinois, 2008 recipient, Wosaic is an open-source project that takes several sources of photos - Flickr, Facebook, or local files - and creates mosaics comprised of those pictures.  It was developed as a fun way to share photos, and put them to an interesting use, other than collecting dust on a hard drive.  We entered the project as an interactive exhibit at Engineering Open House at UIUC in 2008, and had a lot of fun doing live demos for students and visitors.  Though the code base has not changed much since 2008, it lives on in various forms as a project for some classes at UIUC.','Wosaic','2014-11-03 01:28:05.186216','2014-11-08 22:35:44.023753',9);
@@ -56,6 +106,31 @@ INSERT INTO "images" VALUES(18,37,'2014-11-08 23:01:45.187199','2014-11-08 23:01
 INSERT INTO "images" VALUES(19,39,'2014-11-08 23:26:34.460598','2014-11-08 23:26:34.460598','GliiFull.png','image/png',214516,'2014-11-08 23:26:33.744572');
 INSERT INTO "images" VALUES(20,39,'2014-11-08 23:26:53.254634','2014-11-08 23:26:53.254634','Gleeroes.png','image/png',542066,'2014-11-08 23:26:52.309866');
 INSERT INTO "images" VALUES(21,39,'2014-11-08 23:27:19.998998','2014-11-08 23:27:19.998998','GliiThumb.png','image/png',109589,'2014-11-08 23:27:19.464829');
+INSERT INTO "resumes" VALUES(2,'Carl-Erik Svensson','Full','To continue learning and growing through hardware and software engineering opportunities.','2014-11-24 16:20:14.250128','2014-11-24 16:21:38.450421');
+INSERT INTO "resume_items" VALUES(2,'Senior Verification Engineer','2009-07-23','2014-11-14','Worked closely on a UVM testbench to verify a coherency protocol. Played a key role in post-silicon validation. Tested a complex System On Chip design at the system level, specializing in system level and memory subsystem debugging. Worked on an emulation platform, using C, C++, Perl, Verilog, and System Verilog.','Santa Clara, CA',1,'2014-11-23 04:18:47.369917','2014-11-23 04:18:47.369917','NVIDIA',NULL);
+INSERT INTO "resume_items" VALUES(3,'Student','2009-01-02','2009-05-23','Studied xyz in computer science and all that jazz.','Urbana-Champaign',1,'2014-11-23 22:56:05.252860','2014-11-23 22:56:05.252860','University of Illinois',NULL);
+INSERT INTO "resume_items" VALUES(4,'Verification Engineer','2014-11-17','2014-11-23','Soething secret!','Cupertino, CA',-1,'2014-11-23 23:36:14.581224','2014-11-23 23:49:00.512335','Apple','t');
+INSERT INTO "resume_items" VALUES(5,'Verification Engineer','2014-11-17','2014-11-24','','Cupertino, CA',2,'2014-11-24 16:28:56.638623','2014-11-24 16:28:56.638623','Apple','t');
+INSERT INTO "resume_items" VALUES(6,'Senior Verification Engineer','2011-03-24','2014-11-14','Worked closely on a UVM testbench to verify a coherency protocol. Played a key role in post-silicon validation. Tested a complex System On Chip design at the system level, specializing in system level and memory subsystem debugging. ','Santa Clara, CA',2,'2014-11-24 16:30:46.395108','2014-11-24 16:30:46.395108','NVIDIA',NULL);
+INSERT INTO "resume_items" VALUES(7,'Verification Engineer','2009-07-24','2011-03-23','Worked on an emulation platform, using C, C++, Perl, Verilog, and System Verilog.  Wrote a testplan and tests on a system verification team for a Tegra SOC.','Santa Clara, CA',2,'2014-11-24 16:32:32.929111','2014-11-24 16:32:32.929111','NVIDIA',NULL);
+INSERT INTO "resume_items" VALUES(8,'Director of Technology','2009-09-24','2010-09-24','Developed hundreds of lines of Ruby on Rails for a fully featured, data-driven web app, for a small non-profit startup. Architected and implemented the site''s deployment process. Worked on cross platform mobile application','San Francisco, CA',2,'2014-11-24 16:34:33.288649','2014-11-24 16:34:33.288649','GiveChange',NULL);
+INSERT INTO "resume_items" VALUES(9,'CUDA Application Intern','2008-06-01','2008-08-24','Reengineered the LAME MP3 encoder to operate partially in parallel on a GPU. Designed data dependency and control flow charts for the LAME encoder. Coded in C and CUDA to implement parallel algorithms.','Santa Clara, CA',2,'2014-11-24 16:36:19.707742','2014-11-24 16:36:19.707742','NVIDIA',NULL);
+INSERT INTO "resume_items" VALUES(10,'Validation Engineer Intern','2007-06-01','2007-08-24','Worked on an internal tool for debugging simulations.  Developed C++ code to produce and decode XML templates.  Created a visual representation of events in a simulation over time.','Hudson, MA',2,'2014-11-24 16:39:45.790326','2014-11-24 16:39:45.790326','Intel',NULL);
+INSERT INTO "resume_items" VALUES(11,'Validation Engineer Intern','2006-01-14','2006-08-24','Worked on a next-generation server product validating a caching agent.  Wrote tests in C++ and Specman. Debugged simulations.','Hudson, MA',2,'2014-11-24 16:42:24.752332','2014-11-24 16:42:24.752332','Intel',NULL);
+INSERT INTO "resume_items" VALUES(12,'Web Developer','2004-09-24','2005-12-24','Designed and coded in XML, HTML, and CSS.  Managed and created Coldfusion applications.','Champaign, IL',2,'2014-11-24 16:45:19.609189','2014-11-24 16:45:19.609189','University of Illinois',NULL);
+INSERT INTO "resume_items" VALUES(13,'BS and MS in Computer Science','2004-08-24','2009-05-24','Studied towards a BS and MS in Computer Science.  I started my MS as part of a combined degree program in my junior year, as I started taking graduate courses, and began researching.  I completed my undergraduate coursework, graduate coursework, and thesis on the topic of debugging parallel programs in May of 2009.  Coursework included: Software Engineering, Systems Software, Advanced Operating Systems, Embedded Systems, Algorithms, Discrete Math, Calculus, Probability Theory, Theory of Computation, Computer Architecture, Ubiquitous Computing, and French Language.
+
+<p>
+Extra-curricular activities included: Web developer for various Engineering Council subcommittees, member of Kappa Delta Rho social fraternity, member and web developer for the Varsity Men''s Glee Club, as well as participant and award winner in Engineering Open House 2008.
+</p>','Urbana-Champaign',2,'2014-11-24 16:58:01.649622','2014-11-24 16:58:01.649622','University of Illinois',NULL);
+INSERT INTO "posts" VALUES(1,'Normally I like little kids, but my latest aeronautical experience has me thinking otherwise.  Man, could this kid wail.  You would have thought he was on fire.  Ridiculous.  Normally I like little kids, but my latest aeronautical experience has me thinking otherwise.  Man, could this kid wail.  You would have thought he was on fire.  Ridiculous.  Normally I like little kids, but my latest aeronautical experience has me thinking otherwise.  Man, could this kid wail.  You would have thought he was on fire.  Ridiculous.  Normally I like little kids, but my latest aeronautical experience has me thinking otherwise.  Man, could this kid wail.  You would have thought he was on fire.  Ridiculous.  Normally I like little kids, but my latest aeronautical experience has me thinking otherwise.  Man, could this kid wail.  You would have thought he was on fire.  Ridiculous.  Normally I like little kids, but my latest aeronautical experience has me thinking otherwise.  Man, could this kid wail.  You would have thought he was on fire.  Ridiculous.  Normally I like little kids, but my latest aeronautical experience has me thinking otherwise.  Man, could this kid wail.  You would have thought he was on fire.  Ridiculous.  Normally I like little kids, but my latest aeronautical experience has me thinking otherwise.  Man, could this kid wail.  You would have thought he was on fire.  Ridiculous.  Normally I like little kids, but my latest aeronautical experience has me thinking otherwise.  Man, could this kid wail.  You would have thought he was on fire.  Ridiculous.  Normally I like little kids, but my latest aeronautical experience has me thinking otherwise.  Man, could this kid wail.  You would have thought he was on fire.  Ridiculous.  Normally I like little kids, but my latest aeronautical experience has me thinking otherwise.  Man, could this kid wail.  You would have thought he was on fire.  Ridiculous.  Normally I like little kids, but my latest aeronautical experience has me thinking otherwise.  Man, could this kid wail.  You would have thought he was on fire.  Ridiculous.  Normally I like little kids, but my latest aeronautical experience has me thinking otherwise.  Man, could this kid wail.  You would have thought he was on fire.  Ridiculous.  
+
+<p>
+Normally I like little kids, but my latest aeronautical experience has me thinking otherwise.  Man, could this kid wail.  You would have thought he was on fire.  Ridiculous.  Normally I like little kids, but my latest aeronautical experience has me thinking otherwise.  Man, could this kid wail.  You would have thought he was on fire.  Ridiculous.  Normally I like little kids, but my latest aeronautical experience has me thinking otherwise.  Man, could this kid wail.  You would have thought he was on fire.  Ridiculous.  Normally I like little kids, but my latest aeronautical experience has me thinking otherwise.  Man, could this kid wail.  You would have thought he was on fire.  Ridiculous.  
+</p>','Plane Ride','2014-11-23','t',1,'2014-11-24 05:22:38.427317','2014-11-24 05:40:06.012402');
+
+
+
 
 
 
