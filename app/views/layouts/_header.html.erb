@@ -33,11 +33,13 @@
   <% end %>
 </div>
 
-<% page_title = yield(:title) %>
-<% if (page_title) %>
-  <div id="page_title">
-    <h1><%= page_title %></h1> <%= yield(:title_text).html_safe %>
-  </div>
+<% if !flash[:info] && !flash[:error] && !notice %>
+  <% page_title = yield(:title) %>
+  <% if (page_title) %>
+    <div id="page_title">
+      <h1><%= page_title %></h1> <%= yield(:title_text).html_safe %>
+    </div>
+  <% end %>
 <% end %>
 
 <% if flash[:info] %>

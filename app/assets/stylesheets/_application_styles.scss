@@ -161,12 +161,17 @@ div#footer {
 div#footer-menu {
   display: block;
   width: 100%;
-  height: 75px;
+  height: 60px;
   background: $footer_menu;
   position: relative;
   top: 0;
   float: left;
   color: $header_color;
+
+  ul {
+    margin-top: 10px;
+    padding-top: 0;
+  }
 }
 
 .list-dot {
@@ -175,6 +180,10 @@ div#footer-menu {
   background-position: center right;
   background-repeat: no-repeat;
   padding-right: 20px;
+
+  a:hover {
+    color: white;
+  }
 }
 
 .circle {
@@ -217,7 +226,7 @@ ul.footer_nav {
 // Flash
 div#flash {
   margin:0;
-  height: 50px;
+  height: 60px;
   float: left;
   width: 100%;
   font-weight: bold;

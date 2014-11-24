@@ -21,7 +21,8 @@
   <%= render "resume_items/resume_item" %>
 <% end %>
 
-<%=link_to "Find me on LinkedIn", "http://www.linkedin.com/in/carleriksvensson/", :target => "_blank" %>
+<%=link_to "Find me on LinkedIn", "http://www.linkedin.com/in/carleriksvensson/", :target => "_blank" %> | 
+<%=link_to "View my projects", projects_path %>
 
 <% if is_admin? %>
   <br/>

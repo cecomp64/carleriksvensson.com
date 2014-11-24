@@ -52,6 +52,7 @@ rails g scaffold Post content:text title:text posted_on:date published:boolean u
 rails g scaffold Comment content:text author_url:text author:string post_id:int
 
 TODO: Get facebook, google plus sharing
+TODO: Code syntax highlighting
 
 == Props
 

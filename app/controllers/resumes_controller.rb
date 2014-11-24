@@ -43,7 +43,6 @@ class ResumesController < ApplicationController
   # POST /resumes
   # POST /resumes.json
   def create
-    update_tags(tag_vals: get_tags_from_params(params[:resume]), project_id: @project.id)
     @resume = Resume.new(resume_params)
 
     respond_to do |format|

@@ -4,11 +4,13 @@
   <div id="info">
     <h1>&nbsp;</h1>
 
+    <%= link_to resume_title_path("Full") do %>
     <div class="outer-circle light-orange">
       <div class="inner-circle orange">
         <h2>Resume</h2>
       </div>
     </div>
+    <% end %>
 
     <%= link_to project_type_url("code") do %>
     <div class="outer-circle light-red">
