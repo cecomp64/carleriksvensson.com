@@ -22,4 +22,25 @@ module ApplicationHelper
     return false
   end
 
+  # Estimate the differe
+  def date_distance_str(end_date, start_date)
+    days = (end_date - start_date).to_i
+    years = days / 365
+    months = ((days.to_f - (365.to_f * years.to_f)) / 30.to_f).round
+    str = "About "
+
+    if (years > 0)
+      str += "#{years} #{"year".pluralize(years)} "
+    end
+
+    if (months > 0)
+      str += "#{months} #{"month".pluralize(months)} "
+    end
+
+    if (months == 0 && years == 0)
+      str += "#{days} #{"day".pluralize(days)} "
+    end
+
+    return str
+  end
 end
