@@ -12,8 +12,11 @@
   in <%= @resume_item.location %>
 <% end %>
 <br/>
-(<%= @resume_item.start.strftime("%B, %Y") %> - 
-<%= @resume_item.end.nil? || @resume_item.current ? "Today" : @resume_item.end.strftime("%B, %Y") %>)
+<span class="resume_date">
+  <%= @resume_item.start.strftime("%B, %Y") %> - 
+  <%= @resume_item.end.nil? || @resume_item.current ? "Today" : @resume_item.end.strftime("%B, %Y") %> 
+  (<%= date_distance_str(@resume_item.end, @resume_item.start) %>)
+</span>
 </p>
 
 <p>
