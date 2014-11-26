@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141124004033) do
+ActiveRecord::Schema.define(version: 20141126163651) do
 
   create_table "comments", force: true do |t|
     t.text     "content"
@@ -20,6 +20,26 @@ ActiveRecord::Schema.define(version: 20141124004033) do
     t.integer  "post_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "galleries", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "gallery_items", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "gallery_id"
+    t.boolean  "cover"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "images", force: true do |t|

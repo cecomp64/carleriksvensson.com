@@ -54,6 +54,19 @@ rails g scaffold Comment content:text author_url:text author:string post_id:int
 TODO: Get facebook, google plus sharing
 TODO: Code syntax highlighting
 
+== Photo Gallery
+
+rails g scaffold Gallery title:string description:text
+  has_many: gallery_items
+  has_one: cover, :through => gallery_items, :where => {:cover => true}
+
+rails g scaffold GalleryItem title:string description:text gallery_id:integer cover:boolean
+rails generate paperclip gallery_item image
+  has_attached_file :image, :styles => { :icon => "64x64#", :tile1 => "128x128>", :tile2 => "320x240>" }
+  validates_attachment_presence :image
+  validates_attachment_size :image, :less_than => 5.megabytes
+  validates_attachment_content_type :image, :content_type => ['image/jpeg', 'image/png']
+
 == Props
 
 * Social media icons from http://www.graphicsfuel.com/2012/09/15-free-social-media-icons-psd-png/

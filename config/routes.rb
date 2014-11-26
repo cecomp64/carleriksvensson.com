@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :gallery_items
+
+  resources :galleries
+
   resources :comments
 
   resources :posts
