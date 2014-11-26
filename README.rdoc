@@ -71,6 +71,11 @@ rails generate paperclip gallery_item image
 == ImageMagick and RMagick
 
 * Geometry Styles: http://www.imagemagick.org/script/command-line-processing.php#geometry
+* Processors
+** has_attached_file :scan, :styles => { :text => { :quality => :better } }, :processors => [:ocr]
+** http://www.rubydoc.info/gems/paperclip#Post_Processing
+** http://www.rubydoc.info/gems/paperclip/Paperclip/Processor
+
 
 == Props
 
