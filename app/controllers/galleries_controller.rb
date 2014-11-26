@@ -41,8 +41,39 @@ class GalleriesController < ApplicationController
   # PATCH/PUT /galleries/1
   # PATCH/PUT /galleries/1.json
   def update
+    parameters = gallery_params
+    cover = parameters.delete(:cover)
+
+    # Handle the cover image
+    if (cover)
+      gi = GalleryItem.find(cover)
+
+      if (gi)
+        # Remove any previous cover
+        @gallery.gallery_items.each do |item|
+          if (item.cover)
+            item.cover = false
+            item.save
+          end
+        end
+
+        # Set the current cover
+        gi.cover = true
+        gi.save
+      end
+    end
+
+    # Remove the selected images
+    items = params[:gallery][:gallery_items]
+
+    if items
+      items.each do |item_id|
+        GalleryItem.find(item_id).destroy
+      end
+    end
+
     respond_to do |format|
-      if @gallery.update(gallery_params)
+      if @gallery.update(parameters)
         format.html { redirect_to @gallery, notice: 'Gallery was successfully updated.' }
         format.json { render :show, status: :ok, location: @gallery }
       else
@@ -70,6 +101,6 @@ class GalleriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def gallery_params
-      params.require(:gallery).permit(:title, :description)
+      params.require(:gallery).permit(:title, :description, :cover)
     end
 end

@@ -28,7 +28,7 @@ class GalleryItemsController < ApplicationController
 
     respond_to do |format|
       if @gallery_item.save
-        format.html { redirect_to @gallery_item, notice: 'Gallery item was successfully created.' }
+        format.html { redirect_to request.referrer, notice: 'Gallery item was successfully created.' }
         format.json { render :show, status: :created, location: @gallery_item }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class GalleryItemsController < ApplicationController
   def update
     respond_to do |format|
       if @gallery_item.update(gallery_item_params)
-        format.html { redirect_to @gallery_item, notice: 'Gallery item was successfully updated.' }
+        format.html { redirect_to request.referrer, notice: 'Gallery item was successfully updated.' }
         format.json { render :show, status: :ok, location: @gallery_item }
       else
         format.html { render :edit }

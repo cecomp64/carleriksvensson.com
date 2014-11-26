@@ -40,6 +40,12 @@ div.gallery_cover {
   }
 }
 
+div#tileflow {
+  width: 100%;
+  float: left;
+  margin-top: 5px;
+}
+
 // Compass-enabled solution - how do you specify alpha for IE?
 //.gradient {
   //// needs latest Compass, add '@import "compass"' to your scss

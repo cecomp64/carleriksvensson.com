@@ -1,14 +1,18 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @gallery.title %>
-</p>
+<%= render "gallery" %>
 
-<p>
-  <strong>Description:</strong>
-  <%= @gallery.description %>
-</p>
+<div id="tileflow">
+  <% @gallery.gallery_items.each do |gi| %>
+    <%= link_to gi do %>
+      <span class="tile1">
+        <%= image_tag gi.image.url(:tile1) %>
+      </span>
+    <% end %>
+  <% end %>
+</div>
 
-<%= link_to 'Edit', edit_gallery_path(@gallery) %> |
-<%= link_to 'Back', galleries_path %>
+<% if is_admin? %>
+  <%= link_to 'Edit', edit_gallery_path(@gallery) %> |
+<% end %>
+
+<%= link_to 'Galleries', galleries_path %>

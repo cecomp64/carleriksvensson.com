@@ -26,11 +26,11 @@
     <h2>Project Images</h2>
     <% @gallery.gallery_items.each do |gi| %>
       <div class="image_edit">
-        <%= image_tag gi.image.url(:small) %> <br/>
-        <%= f.radio_button(:cover_img, gi.image.id) %>
-        <%= f.label("cover_img_#{gi.image.id}", "Cover Image", :selected => (gi.image.cover)) %><br/>
-        <%= f.check_box(:gallery_items, {:multiple => true}, gi.image.id, nil) %>
-        <%= f.label("gallery_items_#{gi.image.id}", "Remove Image") %>
+        <%= image_tag gi.image.url(:icon) %> <br/>
+        <%= f.radio_button(:cover, gi.id, :checked => gi.cover) %>
+        <%= f.label("cover_#{gi.id}", "Cover Image") %><br/>
+        <%= f.check_box(:gallery_items, {:multiple => true}, gi.id, nil) %>
+        <%= f.label("gallery_items_#{gi.id}", "Remove Image") %>
       </div>
     <% end %>
   </div>
