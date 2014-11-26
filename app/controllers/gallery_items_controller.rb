@@ -69,6 +69,6 @@ class GalleryItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def gallery_item_params
-      params.require(:gallery_item).permit(:title, :description, :gallery_id, :cover)
+      params.require(:gallery_item).permit(:title, :description, :gallery_id, :cover, :image)
     end
 end

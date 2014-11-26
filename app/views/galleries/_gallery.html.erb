@@ -1,0 +1,10 @@
+<%= link_to @gallery do %>
+  <div class="gallery_cover" style="background: <%= @gallery.cover ? "url('#{@gallery.cover.image.url}'); background-position: center; background-size: cover" : "#303030" %>">
+    <div class="gradient">
+      <h1><%= @gallery.title %></h1>
+      <div class="gallery_description">
+        <%= @gallery.description %>
+      </div>
+    </div>
+  </div>
+<% end %>

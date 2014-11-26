@@ -67,6 +67,11 @@ rails generate paperclip gallery_item image
   validates_attachment_size :image, :less_than => 5.megabytes
   validates_attachment_content_type :image, :content_type => ['image/jpeg', 'image/png']
 
+
+== ImageMagick and RMagick
+
+* Geometry Styles: http://www.imagemagick.org/script/command-line-processing.php#geometry
+
 == Props
 
 * Social media icons from http://www.graphicsfuel.com/2012/09/15-free-social-media-icons-psd-png/
