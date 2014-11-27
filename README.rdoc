@@ -33,7 +33,7 @@ Some rails tasks handle backing up and restoring data -- useful for migrations f
 
   rake backup_sqlite3 DB=db/development.sqlite3
   rake db:drop (heroku pg:reset DATABASE_URL)
-  rake restore DUMP=db/seed.sql
+  rake restore dump=db/seeds.sql
 
 == Resume
 

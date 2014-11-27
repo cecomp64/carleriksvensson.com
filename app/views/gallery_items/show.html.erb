@@ -1,22 +1,13 @@
-<p>
-  <strong>Title:</strong>
-  <%= @gallery_item.title %>
-</p>
+<% provide(:title, @gallery_item.title) %>
 
-<p>
-  <strong>Description:</strong>
-  <%= @gallery_item.description %>
-</p>
+<!-- <div class="gallery_item" style="background: <%= "url('#{@gallery_item.image.url}');"%> background-position: center; background-size: cover">
+</div> -->
 
-<p>
-  <strong>Gallery:</strong>
-  <%= @gallery_item.gallery_id %>
-</p>
+<%= image_tag @gallery_item.image.url, width: "1000px", style: "width: 100% " %>
 
-<p>
-  <strong>Cover:</strong>
-  <%= @gallery_item.cover %>
-</p>
+<br/>
+<% if is_admin? %>
+  <%= link_to 'Edit', edit_gallery_item_path(@gallery_item) %> |
+<% end %>
 
-<%= link_to 'Edit', edit_gallery_item_path(@gallery_item) %> |
-<%= link_to 'Back', gallery_items_path %>
+<%= link_to 'Back to Gallery', gallery_path(@gallery_item.gallery_id) %>

@@ -1,5 +1,6 @@
 class GalleryItemsController < ApplicationController
   before_action :set_gallery_item, only: [:show, :edit, :update, :destroy]
+  before_action :admin_only, only: [:index, :new, :update, :destroy]
 
   # GET /gallery_items
   # GET /gallery_items.json

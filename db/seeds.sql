@@ -14,6 +14,9 @@
 
 
 
+
+
+
 INSERT INTO "tags" VALUES(94,'code',41,NULL,'2014-11-03 01:28:05.285740','2014-11-03 01:28:05.287486',NULL);
 INSERT INTO "tags" VALUES(96,'open source',41,NULL,'2014-11-03 01:28:05.292009','2014-11-03 01:28:05.293673',NULL);
 INSERT INTO "tags" VALUES(97,'web',42,NULL,'2014-11-03 01:28:05.296119','2014-11-03 01:28:05.297669',NULL);
@@ -128,6 +131,16 @@ INSERT INTO "posts" VALUES(1,'Normally I like little kids, but my latest aeronau
 <p>
 Normally I like little kids, but my latest aeronautical experience has me thinking otherwise.  Man, could this kid wail.  You would have thought he was on fire.  Ridiculous.  Normally I like little kids, but my latest aeronautical experience has me thinking otherwise.  Man, could this kid wail.  You would have thought he was on fire.  Ridiculous.  Normally I like little kids, but my latest aeronautical experience has me thinking otherwise.  Man, could this kid wail.  You would have thought he was on fire.  Ridiculous.  Normally I like little kids, but my latest aeronautical experience has me thinking otherwise.  Man, could this kid wail.  You would have thought he was on fire.  Ridiculous.  
 </p>','Plane Ride','2014-11-23','t',1,'2014-11-24 05:22:38.427317','2014-11-24 05:40:06.012402');
+INSERT INTO "galleries" VALUES(1,'Safari','Wildlife from Safari West','2014-11-26 16:49:45.274130','2014-11-26 21:33:59.949178');
+INSERT INTO "gallery_items" VALUES(1,'Giraffe','Close up giraffe.',1,'t','2014-11-26 19:28:46.807633','2014-11-26 21:45:07.027596','animals_018.jpg','image/jpeg',291757,'2014-11-26 19:28:45.956595');
+INSERT INTO "gallery_items" VALUES(2,'Giraffe','',1,'f','2014-11-26 21:00:09.498774','2014-11-26 21:45:29.434959','animals_020.jpg','image/jpeg',395612,'2014-11-26 21:00:08.608197');
+INSERT INTO "gallery_items" VALUES(6,'Coy Giraffe','',1,'f','2014-11-26 21:42:05.139850','2014-11-26 21:44:37.868276','animals_015.jpg','image/jpeg',252426,'2014-11-26 21:42:04.286415');
+INSERT INTO "gallery_items" VALUES(7,'Giraffe Rock','Greeting at the entrance of Safari West.',1,'f','2014-11-26 21:42:35.919032','2014-11-26 21:42:35.919032','animals_3_023.jpg','image/jpeg',705124,'2014-11-26 21:42:35.017766');
+INSERT INTO "gallery_items" VALUES(8,'Osterich','',1,'f','2014-11-26 21:43:02.479217','2014-11-26 21:43:02.479217','animals_022.jpg','image/jpeg',293465,'2014-11-26 21:43:01.622363');
+INSERT INTO "gallery_items" VALUES(9,'Osterich','',1,'f','2014-11-26 21:43:18.562720','2014-11-26 21:43:18.562720','animals_024.jpg','image/jpeg',640410,'2014-11-26 21:43:17.676625');
+INSERT INTO "gallery_items" VALUES(10,'Orange','',1,'f','2014-11-26 21:43:46.086166','2014-11-26 21:43:46.086166','animals_3_033.jpg','image/jpeg',566290,'2014-11-26 21:43:45.212549');
+
+
 
 
 
