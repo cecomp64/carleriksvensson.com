@@ -44,6 +44,11 @@ div#tileflow {
   width: 100%;
   float: left;
   margin-top: 5px;
+
+  img:hover {
+    opacity: 0.4;
+    filter: alpha(opacity=40); /* For IE8 and earlier */
+  }
 }
 
 // Compass-enabled solution - how do you specify alpha for IE?

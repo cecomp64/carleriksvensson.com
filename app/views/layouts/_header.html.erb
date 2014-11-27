@@ -2,7 +2,22 @@
 <html>
 <head>
   <title>Carl Svensson</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%  
+    styles = yield(:styles).strip
+    styles = styles.split(",").map {|s| s.strip}
+
+    if styles.size > 0
+      link_styles = styles
+    else
+      link_styles = ['application']
+    end
+  %>
+  
+  <%# stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <% link_styles.each do |style| %>
+    <%= stylesheet_link_tag  style, media: 'all', 'data-turbolinks-track' => true %>
+  <% end %>
+
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
