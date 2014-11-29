@@ -43,4 +43,33 @@ module ApplicationHelper
 
     return str
   end
+
+  # Strip out and parse special tags of the form
+  # [img id size orientation]
+  # [link ...]
+  def parse_post(post)
+    if (!post.nil?)
+      img_re = /\[img ([0-9]+)( (small|medium))?( (left|right))?\]/
+      link_re = /\[link (\S+)\]/
+
+      parsed = post
+      img_matches = post.scan(img_re)
+
+      # Outer array is number of times regex matched
+      # Inner array is each group of a given match
+      img_matches.each do |match|
+        # Substitute one-by-one (not globally)
+        img_id = match[0].to_i
+        float = match[4] ? match[4] : "left"
+        size = match[2] ? match[2] : "medium"
+
+        if (Image.find_by(id: img_id) && Image.find_by(id: img_id).file && Image.find_by(id: img_id).file.url(:medium))
+          parsed.sub!(img_re, link_to(image_tag(Image.find_by(id: img_id).file.url(size), style: "float: #{float}"), Image.find_by(id: img_id).file.url, target: "_new") )
+        end
+      end
+
+      return parsed
+    end
+  end
+
 end

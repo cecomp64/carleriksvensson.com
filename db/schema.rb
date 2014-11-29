@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141126163651) do
+ActiveRecord::Schema.define(version: 20141128052159) do
 
   create_table "comments", force: true do |t|
     t.text     "content"
@@ -50,6 +50,8 @@ ActiveRecord::Schema.define(version: 20141126163651) do
     t.string   "file_content_type"
     t.integer  "file_file_size"
     t.datetime "file_updated_at"
+    t.text     "caption"
+    t.integer  "post_id"
   end
 
   create_table "posts", force: true do |t|

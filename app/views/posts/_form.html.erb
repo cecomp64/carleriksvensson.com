@@ -1,3 +1,4 @@
+<h2>Post</h2>
 <%= form_for(@post) do |f| %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
@@ -12,12 +13,13 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :content %><br>
-    <%= f.text_area :content %>
-  </div>
-  <div class="field">
     <%= f.label :title %><br>
-    <%= f.text_area :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :content %><br>
+    <%= f.text_area :content, rows: 50, cols: 90 %>
   </div>
   <div class="field">
     <%= f.label :published %><br>
@@ -27,3 +29,34 @@
     <%= f.submit %>
   </div>
 <% end %>
+
+<h2>Post Images</h2>
+<% @post.images.each do |img| %>
+  <%= link_to edit_image_path(img), style: "float:left" do %>
+    <span style="float: left">
+      ID: <%= img.id %> <br/>
+      <%= image_tag img.file.url(:small) %>
+      <br/>
+      <%= img.caption %>
+    </span>
+  <% end %>
+<% end %>
+
+<div style="clear:both">
+<% @image = Image.new %>
+<%= form_for(@image, :html => {:multipart => true}) do |f| %>
+  <%= f.hidden_field :post_id, :value => @post.id %>
+  <%= f.hidden_field :requestor, :value => "post" %>
+  <div class="field">
+    <%= f.label :file %><br>
+    <%= f.file_field :file %>
+  </div>
+  <div class="field">
+    <%= f.label :caption %><br>
+    <%= f.text_field :caption %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+</div>

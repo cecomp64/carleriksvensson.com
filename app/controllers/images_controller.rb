@@ -32,6 +32,8 @@ class ImagesController < ApplicationController
     redir_path = @image
     if (requestor == "project")
       redir_path = edit_project_path(prms[:project_id])
+    elsif (requestor == "post")
+      redir_path = edit_post_path(prms[:post_id])
     end
 
     respond_to do |format|
@@ -77,6 +79,6 @@ class ImagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def image_params
-      params.require(:image).permit(:primary, :project_id, :file, :requestor)
+      params.require(:image).permit(:primary, :project_id, :file, :requestor, :post_id, :caption)
     end
 end

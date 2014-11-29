@@ -3,6 +3,15 @@
 <div id="body">
   <div id="posts_page">
     <div id="post_archive">
+      <% if is_admin? %>
+        <h2>Unpublished Posts</h2>
+        <ul>
+          <% @unpublished_posts.each do |post| %>
+            <li><%= link_to "#{post.title}", post %></li>
+          <% end %>
+        </ul>
+      <% end %>
+
       <h2>Recent Posts</h2>
       <ul>
         <% @recent_posts.each do |post| %>

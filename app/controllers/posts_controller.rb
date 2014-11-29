@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :set_posts
-  before_action :admin_only, only: [:show, :index, :new, :update, :destroy]
+  before_action :admin_only, only: [:new, :update, :destroy]
   before_action :require_login, only: [:new, :update, :destroy]
 
   # GET /posts
@@ -50,7 +50,7 @@ class PostsController < ApplicationController
   def update
     @post.user_id = current_user.id
 
-    if (@post.published) 
+    if (@post.published || post_params[:published]) 
       @post.posted_on = Date.today
     end
 
@@ -84,8 +84,9 @@ class PostsController < ApplicationController
     # Setup the posts for the navigation menu
     # TODO: Split it up by recent and archive
     def set_posts
-      @recent_posts = Post.all
+      @recent_posts = Post.all.where(:published => true)
       @archive_posts = nil
+      @unpublished_posts = Post.all.where(:published => false)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -7,7 +7,7 @@
 div#gallery_body {
   background: $header_color;
   margin: 0;
-  padding: 0;
+  padding: 5px 0 5px 0;
   float: left;
   width: 100%;
   color: white;
@@ -25,6 +25,8 @@ div.gallery_cover {
   background-position: center;
   background-size: cover;
   position: relative;
+  margin-bottom: 5px;
+  margin-top: 5px;
 
   // TODO Add some kind of black gradient to make text show up
   h1 {

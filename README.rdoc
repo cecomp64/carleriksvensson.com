@@ -32,6 +32,7 @@ rails g scaffold Project type:string url:string picture:string description:strin
 Some rails tasks handle backing up and restoring data -- useful for migrations from development to production:
 
   rake backup_sqlite3 DB=db/development.sqlite3
+  heroku config
   rake db:drop (heroku pg:reset DATABASE_URL)
   rake restore dump=db/seeds.sql
 
@@ -53,6 +54,17 @@ rails g scaffold Comment content:text author_url:text author:string post_id:int
 
 TODO: Get facebook, google plus sharing
 TODO: Code syntax highlighting
+
+rails g migration AddCaptionToImage
+post:
+  has_many :images
+
+Blog syntax
+* Any HTML
+* Images
+** [img ID# (small/medium) (left/right)]
+* Links
+** [link (http://external.url.com | relative/path/1)]
 
 == Photo Gallery
 
