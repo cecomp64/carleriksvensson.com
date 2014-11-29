@@ -1,10 +1,10 @@
 <% provide(:title, "Blog Posts") %>
 
-<div id="post_content">
 <% if is_admin? %>
-  <%= link_to 'New Post', new_post_path %>
+  <div id="post_content">
+    <%= link_to 'New Post', new_post_path %>
+  </div>
 <% end %>
-</div>
 
 <% if !@post.nil? %>
   <%= render "post" %>
